@@ -77,6 +77,29 @@
     </script>
 
 
+    <!-- あえぎ声ツイート -->
+    <script>
+    
+    function tweet(){
+      
+      var text = document.getElementById("result").textContent;
+      var si = '@Satoh_Ikumichan';
+      var url = location.href;
+
+      if(result.textContent == ''){
+        alert('先に生成ボタンを押してください。');
+      }else if(text.length > 140){
+        alert('ツイートできるのは140文字までだよ');
+      }else if(text.length + (si.length)/2 > 140){
+        window.open().location.href = ("https://twitter.com/share?url=" + text);
+      }else if(text.length + (si.length)/2 + 12 > 140){ //urlは12文字扱い
+        window.open().location.href = ("https://twitter.com/share?url=" + text + si);
+      }else {
+        window.open().location.href = ("https://twitter.com/share?url=" + text + si + "%0D%0A" + url);
+      }
+    }
+    </script>
+
   </head>
 
   <body>
@@ -113,7 +136,7 @@
     <h2>あえぎ声生成（試作品）</h2>
 
     <p>
-      それっぽい感じ（？）で指定の文字数のあえぎ声を作るよ。<br>
+      指定された文字数でぱっと見はそれっぽい感じ（？）のあえぎ声を作るよ。<br>
       javascriptの勉強をかねて作ったのでブラウザでjsを有効にしてみてね。<br>
       あえぎ方が今のところ単調なので気が向いたら改良するよ。<br>
       多少はチェックしたつもりだけど正しく動かないとかあえぎのパターンとかこうした方がいいというのがあればツイッターとかで教えてね。<br>
@@ -126,6 +149,7 @@
     <input value="20" id="input_num" />
       <button onclick="a()">生成</button>
       <button onclick="copy()">コピー</button>
+      <button onclick="tweet()">ツイート</button>
     </p>
     <p id="result"></p>
 
