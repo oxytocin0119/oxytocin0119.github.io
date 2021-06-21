@@ -13,6 +13,8 @@
 
     <link rel="stylesheet" href="../general.css">
 
+    <!-- 喘ぎ声生成スクリプト -->
+
     <script>
     function a(){
       function g_aegi(n){
@@ -48,6 +50,31 @@
     }
     </script>
 
+    <!-- 喘ぎ声コピースクリプト -->
+    <script>
+    function copy(){
+//      var text = document.getElementById("result").textContent;
+//      alert(text);
+//      text.focus();
+//      text.select();
+      var text = document.querySelector('#result');
+
+      var range = document.createRange();
+      range.selectNodeContents(text);
+
+      var selection = window.getSelection();
+      selection.removeAllRanges();
+      selection.addRange(range);
+
+      if(result.textContent == ''){
+        alert('先に生成ボタンを押してください。');
+      }else if(document.execCommand('copy')){
+        alert('コピーしました。');
+      }else{
+        alert('手動でコピーしてください');
+      }
+    }
+    </script>
 
 
   </head>
@@ -98,6 +125,7 @@
     作りたいあえぎ声の文字数を半角で入力して生成ボタンを押してね。<br>
     <input value="20" id="input_num" />
       <button onclick="a()">生成</button>
+      <button onclick="copy()">コピー</button>
     </p>
     <p id="result"></p>
 
