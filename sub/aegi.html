@@ -104,15 +104,20 @@
     <!-- SpeechAPI（？）読み上げ -->
     <script>
       function v_play(){
-        var text = document.querySelector('#result');
-        var speech = text.textContent;
-        var msg = new SpeechSynthesisUtterance();
-        msg.text = speech;
-        msg.lang = 'ja-JP';
-        if(speech==''){
-          alert('先に生成ボタンを押してください。');
+        SpeechRecognition = webkitSpeechRecognition || SpeechRecognition;
+        if ('SpeechRecognition' in window) {
+          var text = document.querySelector('#result');
+          var speech = text.textContent;
+          var msg = new SpeechSynthesisUtterance();
+          msg.text = speech;
+          msg.lang = 'ja-JP';
+          if(speech==''){
+            alert('先に生成ボタンを押してください。');
+          }else{
+            window.speechSynthesis.speak(msg);
+          }
         }else{
-          window.speechSynthesis.speak(msg);
+          alert('読み上げ対応してないっぽいので別のブラウザで試してください。');
         }
       }/*
       function v_stop(){
