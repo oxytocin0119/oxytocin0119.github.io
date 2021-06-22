@@ -107,7 +107,8 @@
         if (typeof speechSynthesis === 'undefined') {
             alert('読み上げ対応してないっぽいので別のブラウザで試してください。（Chrome,Edgeは読み上げ確認済み）');
 
-        }else{
+        } else {
+            //console.log(speechSynthesis);
             var text = document.querySelector('#result');
             var speech = text.textContent;
             var msg = new SpeechSynthesisUtterance();
@@ -129,6 +130,15 @@
       function v_resume(){
         speechSynthesis.resume();
       }*/
+    </script>
+
+
+    <script>
+        function verified() {
+            var v_a = ['Edge','Chrome'];
+            var v_w = ['Edge', 'Chrome'];
+            alert('私の環境で読み上げできたブラウザ\n' + 'Android:' + v_a + '\nWindows:' + v_w);
+        }
     </script>
 
 
@@ -173,6 +183,7 @@
       あえぎ方が今のところ単調なので気が向いたら改良するよ。<br>
       多少はチェックしたつもりだけど正しく動かないとかあえぎのパターンとかこうした方がいいというのがあればツイッターとかで教えてね。<br>
       読み上げは見てるブラウザによって声が違ったりもしかしたら上手く機能しないかも。<br>
+      <button onclick="verified()">動作確認したブラウザ</button>
     </p>
 
     <!-- 以下喘ぎ声生成 -->
