@@ -103,21 +103,21 @@
 
     <!-- SpeechAPI（？）読み上げ -->
     <script>
-      function v_play(){
-        SpeechRecognition = webkitSpeechRecognition || SpeechRecognition;
-        if ('SpeechRecognition' in window) {
-          var text = document.querySelector('#result');
-          var speech = text.textContent;
-          var msg = new SpeechSynthesisUtterance();
-          msg.text = speech;
-          msg.lang = 'ja-JP';
-          if(speech==''){
-            alert('先に生成ボタンを押してください。');
-          }else{
-            window.speechSynthesis.speak(msg);
-          }
+      function v_play() {
+        if (typeof speechSynthesis === 'undefined') {
+            alert('読み上げ対応してないっぽいので別のブラウザで試してください。（Chrome,Edgeは読み上げ確認済み）');
+
         }else{
-          alert('読み上げ対応してないっぽいので別のブラウザで試してください。');
+            var text = document.querySelector('#result');
+            var speech = text.textContent;
+            var msg = new SpeechSynthesisUtterance();
+            msg.text = speech;
+            msg.lang = 'ja-JP';
+            if (speech == '') {
+                alert('先に生成ボタンを押してください。');
+            } else {
+                window.speechSynthesis.speak(msg);
+            }
         }
       }/*
       function v_stop(){
