@@ -24,7 +24,7 @@
         for(let i = 0;i < n; i++){
           var a = Math.floor( Math.random() * index.length );
           if(i > n -2){
-            a = Math.floor( Math.random() * index.length ) -1;
+            a = Math.floor( Math.random() * (index.length - 1) );
           }
           if(i === n){
             aegi[i] = "\0";
@@ -89,7 +89,7 @@
       if(result.textContent == ''){
         alert('先に生成ボタンを押してください。');
       }else if(text.length > 140){
-        alert('ツイートできるのは140文字までだよ');
+        alert('ツイートできるのは140文字までだよ。');
       }else if(text.length + (si.length)/2 > 140){
         window.open().location.href = ("https://twitter.com/share?url=" + text);
       }else if(text.length + (si.length)/2 + 12 > 140){ //urlは12文字扱い
@@ -99,6 +99,33 @@
       }
     }
     </script>
+
+
+    <!-- SpeechAPI（？）読み上げ -->
+    <script>
+      function v_play(){
+        var text = document.querySelector('#result');
+        var speech = text.textContent;
+        var msg = new SpeechSynthesisUtterance();
+        msg.text = speech;
+        msg.lang = 'ja-JP';
+        if(speech==''){
+          alert('先に生成ボタンを押してください。');
+        }else{
+          window.speechSynthesis.speak(msg);
+        }
+      }/*
+      function v_stop(){
+        speechSynthesis.cancel();
+      }
+      function v_pause(){
+        speechSynthesis.pause();
+      }
+      function v_resume(){
+        speechSynthesis.resume();
+      }*/
+    </script>
+
 
   </head>
 
@@ -140,6 +167,7 @@
       javascriptの勉強をかねて作ったのでブラウザでjsを有効にしてみてね。<br>
       あえぎ方が今のところ単調なので気が向いたら改良するよ。<br>
       多少はチェックしたつもりだけど正しく動かないとかあえぎのパターンとかこうした方がいいというのがあればツイッターとかで教えてね。<br>
+      読み上げは見てるブラウザによって声が違ったりもしかしたら上手く機能しないかも。<br>
     </p>
 
     <!-- 以下喘ぎ声生成 -->
@@ -150,6 +178,13 @@
       <button onclick="a()">生成</button>
       <button onclick="copy()">コピー</button>
       <button onclick="tweet()">ツイート</button>
+    <!--  読み上げボタン -->
+      
+        <button onclick="v_play()">読み上げ</button><!-- この辺はそのうち
+        <button onclick="v_stop()">停止</button>
+        <button onclick="v_pause()">一時停止</button>
+        <button onclick="v_resume()">再開</button> -->
+      
     </p>
     <p id="result"></p>
 
