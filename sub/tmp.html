@@ -105,7 +105,7 @@
     <script>
       function v_play() {
         if (typeof speechSynthesis === 'undefined') {
-            alert('読み上げ対応してないっぽいので別のブラウザで試してください。（Chrome,Edgeは読み上げ確認済み）');
+            alert('読み上げ対応してないっぽいので別のブラウザで試してください。（詳しくは’動作確認したブラウザ’ボタン）');
 
         } else {
             alert(speechSynthesis);
@@ -135,9 +135,9 @@
 
     <script>
         function verified() {
-            var v_a = ['Edge','Chrome'];
+            var v_a = ['Edge','Chrome','Firefox'];
             var v_w = ['Edge', 'Chrome'];
-            alert('私の環境で読み上げできたブラウザ\n' + 'Android:' + v_a + '\nWindows:' + v_w);
+            alert('私の環境で読み上げできたブラウザ\n' + 'Android: ' + v_a + '\nWindows: ' + v_w);
         }
     </script>
 
