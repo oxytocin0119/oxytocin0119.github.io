@@ -105,11 +105,11 @@
     <script>
       function v_play() {
         if (typeof speechSynthesis === 'undefined') {
-            alert(speechSynthesis);
+            alert(typeof speechSynthesis); //後で消す
             alert('読み上げ対応してないっぽいので別のブラウザで試してください。（詳しくは’動作確認したブラウザ’ボタン）');
 
         } else {
-            alert(speechSynthesis);
+            alert(typeof speechSynthesis); //後で消す
             var text = document.querySelector('#result');
             var speech = text.textContent;
             var msg = new SpeechSynthesisUtterance();
