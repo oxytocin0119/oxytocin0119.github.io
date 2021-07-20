@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+  <head>
+
+    <meta charset="utf-8">
+
+    <!-- とりあえずでスマホ画面対応 -->
+
+    <meta name = "viewport" content = "width=device-width">
+
+    <title>ケース生成</title>
+
+    <link rel="stylesheet" href="../general.css">
+
+
+<!--
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
+-->
+
+  </head>
+
+
+  <body>
+
+  <noscript><h1>javascriptを有効にしてください</h1></noscript>
+
+  <!-- headerってくくる必要性わかんない -->
+  <div id="header"></div>
+  <script src="../header.js" charset="utf-8"></script>
+
+
+    <!-- ヘッダーの区切り線 -->
+
+    <hr size:50;>
+
+
+
+    <!-- 以下本文 -->
+    
+    <h2>ケース生成</h2>
+    <p>
+      アウトカウント、ランナー、バッターの打順と打席をランダムに指定します。<br>
+      私はこれでどんな配球しようかなとか、ポジショニングはどの辺にしようかなとか考えたりします。<br>
+      これだけだと状況をあんまり絞り込めてないのでイニングや点差、具体的な打者等は各々で仮定してみてください<br>
+    </p>
+    
+    <button onclick="button();">更新</button>
+    <p id="content"></p>
+    <script src="casegen.js" charset="utf-8"></script>
+
+    <!-- 本文ここまで -->
+
+
+
+
+    <hr size:50;>
+
+
+
+    <!-- 別ページのリンク -->
+
+    <!-- footerもよくわからんけど作法みたいなもんかな？ -->
+
+
+    <p id="footer"></p>
+
+    <script src="../footer.js" charset="utf-8"></script>
+
+
+  </body>
+    
+</html>
