@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="ja">
 
   <head>
 
@@ -13,6 +13,13 @@
 
     <link rel="stylesheet" href="../general.css">
 
+
+<!--
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
+-->
+
   </head>
 
 
@@ -21,25 +28,8 @@
 
 
   <!-- headerってくくる必要性わかんない -->
-
-    <header>
-
-      <!-- ツイッターアイコン取得して貼り付け -->
-
-      <p class="header_image"><a href="https://twitter.com/Satoh_Ikumichan"><img src="https://pbs.twimg.com/profile_images/874845579540664321/kO9ZeDsm_400x400.jpg" alt="汚奇死徒神のプロフィール画像" width="80" height="80"></a></p>
-
-      <!-- タイトル -->
-
-      <h1 class="title">オキシのテストページ</h1>
-
-      <!-- いずれ音楽貼り付けようかな
-
-      <audio src="hoge.mp3" autoplay loop controls></audio>
-
-        -->
-
-    </header>
-
+  <div id="header"></div>
+  <script src="../header.js" charset="utf-8"></script>
 
 
     <!-- ヘッダーの区切り線 -->
@@ -53,6 +43,8 @@
     <!-- twitterのTL -->
 
     <a class="twitter-timeline" data-lang="ja" data-width="300" data-height="400" data-dnt="true" data-theme="light" href="https://twitter.com/Satoh_Ikumichan?ref_src=twsrc%5Etfw">Tweets by Satoh_Ikumichan</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+
 
     <p>テストページなのでとくに書くことがないYO</p>
 
@@ -69,6 +61,7 @@
 
     <!-- footerもよくわからんけど作法みたいなもんかな？ -->
 
+<!--
     <footer>
 
       <p>
@@ -90,7 +83,11 @@
       </p>
 
     </footer>
+-->
 
+    <p id="footer"></p>
+
+    <script src="../footer.js" charset="utf-8"></script>
 
 
   </body>
