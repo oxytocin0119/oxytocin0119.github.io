@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+  <head>
+
+    <meta charset="utf-8">
+
+    <!-- とりあえずでスマホ画面対応 -->
+
+    <meta name = "viewport" content = "width=device-width">
+
+    <title>wordleをつまらなくする</title>
+
+    <link rel="stylesheet" href="../general.css">
+
+
+<!--
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
+-->
+
+  </head>
+
+
+  <body>
+
+  <noscript><h1>javascriptを有効にしてください</h1></noscript>
+
+  <!-- headerってくくる必要性わかんない -->
+  <div id="header"></div>
+  <script src="../header.js" charset="utf-8"></script>
+
+
+    <!-- ヘッダーの区切り線 -->
+
+    <hr size:50;>
+
+
+
+    <!-- 以下本文 -->
+    
+    <h2>wordleのヒント</h2>
+    <p>
+      wordleで手が詰まったときにヒントとして<br>
+    </p>
+    
+    <object data="wordles.txt" type="text/plain" id="obj" style="display:none" ></object>
+
+    <p id="content"></p>
+    <script src="wordle_hint.js" charset="utf-8"></script>
+    <!-- 本文ここまで -->
+
+
+
+
+    <hr size:50;>
+
+
+
+    <!-- 別ページのリンク -->
+
+    <!-- footerもよくわからんけど作法みたいなもんかな？ -->
+
+
+    <p id="footer"></p>
+
+    <script src="../footer.js" charset="utf-8"></script>
+
+
+  </body>
+    
+</html>
