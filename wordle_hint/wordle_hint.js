@@ -1,9 +1,6 @@
 ﻿window.onload = function(){
   form_gen();
 }
-//var hoge = get_list();
-//console.log(typeof(hoge));
-//document.getElementById("content").innerHTML = get_list();
 
 function form_gen(){
   var form = '<form name="wform" onsubmit="checkText()">'
@@ -87,18 +84,21 @@ function get_list(known, include, exclude) {
       list = list.filter(function(value) { return value.match(exreg); });
     }
     var output='';
-    for(i=0;i<list.length;i++){
-      output += list[i] + ',';
-      if(i%8==7){
-        output += '<br>';
+    if(list.length < 1000){
+      for(i=0;i<list.length;i++){
+        output += list[i] + ',';
+        if(i%8==7){
+          output += '<br>';
+        }
       }
+      output = output.slice(0,output.length-1);
+    }else{
+      output = '単語の候補が1000以上あるのでもう少し絞ってください。<br>';
+      output += '現在' + list.length + '個';
     }
     
-    document.getElementById("content").innerHTML = output.slice(0,output.length-1);
+    document.getElementById("content").innerHTML = output;
     
     return list;
   },false);
-  //console.log(list);
-//  var list = res.split(/\r\n|\n/);
-  //return list;
 }

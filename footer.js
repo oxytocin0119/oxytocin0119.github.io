@@ -13,6 +13,7 @@ if (path.indexOf("/index.html") != -1 || path == "/") {
                 '<ul>' +
                     '<li> <a href="aegi/aegi.html">あえぎ声生成（試作品）</a>' +
                     '<li> <a href="casegen/casegen.html">ケース生成（試作品）</a>' +
+                    '<li> <a href="wordle_hint/wordle_hint.html">wordleをつまらなくするもの</a>' +
                 '</ul>'+
             '</p>' +
 
@@ -23,7 +24,7 @@ if (path.indexOf("/index.html") != -1 || path == "/") {
                '</ul>' +
             '</p>'+
         '</footer> ';
-} else if (path.indexOf("sub") != -1 || path.indexOf("aegi") != -1 || path.indexOf("casegen") != -1) {
+} else if (path.indexOf("sub") != -1 || path.indexOf("aegi") != -1 || path.indexOf("casegen") != -1 || path.indexOf("wordle_hint") != -1) {
     document.getElementById("footer").innerHTML =
         '<footer>' +
             '<p>'+
@@ -37,6 +38,7 @@ if (path.indexOf("/index.html") != -1 || path == "/") {
                 '<ul>' +
                     '<li> <a href="../aegi/aegi.html">あえぎ声生成（試作品）</a>' +
                     '<li> <a href="../casegen/casegen.html">ケース生成（試作品）</a>' +
+                    '<li> <a href="../wordle_hint/wordle_hint.html">wordleをつまらなくするもの</a>' +
                 '</ul>'+
             '</p>' +
             '<p>' +
