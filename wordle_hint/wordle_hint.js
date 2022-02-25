@@ -4,7 +4,7 @@ function get_list() {
   var obj = document.getElementById("obj");
   obj.onload = function(){
     var data = obj.contentDocument.documentElemment.textContent;
-    list = data.split(/\r\n|\n);
+    list = data.split(/\r\n|\n/);
     list.forEach(e => console.log(e));
   }
 }
