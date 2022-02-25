@@ -1,4 +1,5 @@
-﻿document.getElementById("content").innerHTML = gen();
+﻿//document.getElementById("content").innerHTML = gen();
+get_list;
 
 function get_list() {
   var obj = document.getElementById("obj");
